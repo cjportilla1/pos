@@ -39,12 +39,12 @@
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Bienvenido!</h1>
                   </div>
-                  <form class="user">
+                  <form class="user" id="frmLogin">
                     <div class="form-group">
-                      <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Direccion de email...">
+                      <input type="text" class="form-control form-control-user" name="usuario" id="usuario" aria-describedby="emailHelp" placeholder="Direccion de email...">
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Contraseña">
+                      <input type="password" class="form-control form-control-user" id="password" name="password" placeholder="Contraseña">
                     </div>
                     <div class="form-group">
                       <div class="custom-control custom-checkbox small">
@@ -57,14 +57,18 @@
                     </a>
                  
                    
-                  </form>
+         
                   <hr>
                   <div class="text-center">
-                    <a class="small" href="forgot-password.php">Forgot Password?</a>
+                    <a class="small" href="forgot-password.php">Olvidaste tu contraseña?</a>
                   </div>
+                  <hr>
                   <div class="text-center">
-                    <a class="small" href="register.php">Create an Account!</a>
+             
+                    <a class="btn btn-danger btn-user btn-block" href="register.php">Crea tu cuenta!</a>
+               
                   </div>
+                  </form>
                 </div>
               </div>
             </div>

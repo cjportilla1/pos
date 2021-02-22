@@ -7,7 +7,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
+  <script src="vendor/jquery/jquery-3.2.1.min"></script>
   <meta name="author" content="">
+  <script src="js/funciones.js"></script>
+
 
   <title>Registro servitec</title>
 
@@ -34,32 +37,33 @@
               <div class="text-center">
                 <h1 class="h4 text-gray-900 mb-4">Crea tu cuenta!</h1>
               </div>
-              <form class="user">
+              <form class="user" id="frmRegistro">
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Nombre">
+                    <input type="text" class="form-control form-control-user" name="Nombre" id="exampleFirstName" placeholder="Nombre">
                   </div>
                   <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Apellido">
+                    <input type="text" class="form-control form-control-user" name="Apellido" id="exampleLastName" placeholder="Apellido">
                   </div>
                 </div>
                 <div class="form-group">
-                  <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email">
+                  <input type="email" class="form-control form-control-user" name="Usuario" id="exampleInputEmail" placeholder="Usuario(email)">
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-12 mb-3 mb-sm-0">
-                    <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Contraseña">
+                    <input type="password" class="form-control form-control-user" name="Password" id="exampleInputPassword" placeholder="Contraseña">
                   </div>
-                
+
                 </div>
-                <a href="" class="btn btn-primary btn-user btn-block">
+             
+                <a href="" id="registro" class="btn btn-primary btn-user btn-block">
                   Register Account
                 </a>
                 <hr>
                 <a href="index.php" class="btn btn-google btn-user btn-block">
                   <i class="fab fa-arrow-alt-circle-left fa-fw"></i> Regresar al login
                 </a>
-              
+
               </form>
               <hr>
               <div class="text-center">
@@ -76,6 +80,33 @@
 
   </div>
 
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#registro').click(function() {
+
+
+       vacios= validarFormVacio('frmRegistro')
+
+        if (vacios>0) {
+          alert('debes llenar todos los campos');
+
+          return false;
+          
+        }
+
+        datos = $('#frmRegistro').serialize();
+        $.ajax({
+          type: "POST",
+          data: datos,
+          url: "../procesos/regLogin/registrarUsuario.php",
+          success: function(r) {
+
+          }
+        });
+      });
+
+    });
+  </script>
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
