@@ -1,8 +1,8 @@
 <?php
 
 
-require_once('../..clases/Conexion.php');
-require_once('../..Usuarios.php');
+require('../../clases/Conexion.php');
+require_once('../../clases/Usuarios.php');
 
 $obj=new usuarios();
 
@@ -20,7 +20,12 @@ $datos=array(
     
 );
 
+
 echo $obj->registroUsuario($datos);
+
+
+
+
 
 
 ?>

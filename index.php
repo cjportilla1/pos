@@ -9,6 +9,8 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
+  <script src="js/funciones.js"></script>
+
   <title>SB Admin 2 - Login</title>
 
   <!-- Custom fonts for this template-->
@@ -52,7 +54,7 @@
                         <label class="custom-control-label" for="customCheck">Recuerdame</label>
                       </div>
                     </div>
-                    <a href="main.php" class="btn btn-primary btn-user btn-block">
+                    <a id="ingresarSistema" class="btn btn-primary btn-user btn-block">
                       Iniciar sesion
                     </a>
                  
@@ -94,3 +96,36 @@
 </body>
 
 </html>
+
+
+<script type="text/javascript">
+	$('#ingresarSistema').click(function(){
+
+    vacios= validarFormVacio('frmLogin')
+
+if (vacios>0) {
+  alert('debes llenar todos los campos');
+
+  return false;
+  
+}
+
+
+datos=$('#frmLogin').serialize();
+$.ajax({
+  type:"POST",
+  data:datos,
+  url:"procesos/regLogin/Login.php",
+  success:function(r){
+
+    if (r==1) {
+      window.location="main.php";
+    }else{
+      alert('Datos erroneos o error al acceder!');
+    }
+
+  }
+});
+});
+
+</script>

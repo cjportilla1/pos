@@ -56,7 +56,7 @@
 
                 </div>
              
-                <a href="" id="registro" class="btn btn-primary btn-user btn-block">
+                <a  id="registro" class="btn btn-primary btn-user btn-block">
                   Register Account
                 </a>
                 <hr>
@@ -98,8 +98,18 @@
         $.ajax({
           type: "POST",
           data: datos,
-          url: "../procesos/regLogin/registrarUsuario.php",
+          url: "procesos/regLogin/registrarUsuario.php",
           success: function(r) {
+          
+      // console.log(r);
+// window.location.href='procesos/regLogin/registrarUsuario.php';
+if (r==1) {
+  alert('Exito al guardar el usuario!');
+  
+}else{
+  alert('Error al guardar el usuario!');
+}
+
 
           }
         });
@@ -108,7 +118,7 @@
     });
   </script>
   <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
+  <!-- <script src="vendor/jquery/jquery.min.js"></script> -->
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
