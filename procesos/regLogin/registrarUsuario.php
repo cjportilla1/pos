@@ -11,10 +11,10 @@ $obj=new usuarios();
 $pass=sha1($_POST['Password']);
 
 $datos=array(
-    $_POST['Nombre'],
-    $_POST['Apellido'],
-    $_POST['Usuario'],
-    $pass
+    trim($_POST['Nombre']),
+    trim($_POST['Apellido']),
+    trim($_POST['Usuario']),
+    trim($pass)
    
 
     

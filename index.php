@@ -118,6 +118,8 @@ $.ajax({
   url:"procesos/regLogin/Login.php",
   success:function(r){
 
+    console.log(r);
+
     if (r==1) {
       window.location="main.php";
     }else{

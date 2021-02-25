@@ -101,7 +101,7 @@
           url: "procesos/regLogin/registrarUsuario.php",
           success: function(r) {
           
-      // console.log(r);
+      console.log(r);
 // window.location.href='procesos/regLogin/registrarUsuario.php';
 if (r==1) {
   alert('Exito al guardar el usuario!');
