@@ -35,6 +35,15 @@ public function registroUsuario($datos){
 
 }
 
+public function loginUser($datos){
+
+    $c =new conectar();
+
+    $conex=$c->conexion();
+    $conex->set_charset("utf8");
+
+}
+
 }
 
 ?>
