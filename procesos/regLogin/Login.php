@@ -10,7 +10,7 @@ $obj=new usuarios();
 $datos=array(
     trim($_POST['usuario']),
     trim($_POST['password']),
-   
+
 );
 
 

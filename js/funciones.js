@@ -10,3 +10,10 @@ function validarFormVacio(formulario){
     }
     return vacios;
 }
+
+function confirmDelete(id){
+    var r=confirm("¿Estas seguro de eliminar este registro?");
+    if (r==true){
+      window.location.href = "../vistas/categorias.php?eliminar&id="+id;
+    }
+  }
